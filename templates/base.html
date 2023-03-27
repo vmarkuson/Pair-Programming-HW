@@ -15,12 +15,6 @@
   </head>
 
   <body>
-    <div class="container">
-      <ul>
-        <li><a href="{{ url_for('homepage') }}">Home</a></li>
-        <li><a href="{{ url_for('about') }}">About</a></li>
-      </ul>
-      {% block body %}{% endblock %}
-    </div>
+    <div class="container">{% block body %}xx {% endblock %}</div>
   </body>
 </html>
