@@ -8,11 +8,10 @@ friends_dict = [
 
 
 @app.route("/", methods=["GET", "POST"])
-def index():
+def homepage():
     return render_template(
         "index.html", pageTitle="Web form template", friends=friends_dict
     )
-
 
 @app.route("/add", methods=["POST"])
 def add():
