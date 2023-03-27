@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 friends_dict = [
     {"name": "Test", "flavor": "swirl", "read": "yes", "activities": "reading"}
-]
+] 
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -48,6 +48,12 @@ def add():
         return redirect(url_for("index"))
     else:
         return redirect(url_for("index"))
+
+@app.route("/about",)
+def about():
+    return render_template(
+        "about.html"
+    )
 
 
 if __name__ == "__main__":
