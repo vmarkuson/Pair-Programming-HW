@@ -108,20 +108,24 @@
   <table border="1">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Favorite Ice Cream</th>
-        <th>Read for Fun</th>
-        <th>Favorite Activities</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Classification</th>
+        <th>Details</th>
+        <th>Accquisition</th>
       </tr>
     </thead>
 
     <tbody>
       {% for friend in friends %}
       <tr>
-        <td>{{ friend.name }}</td>
-        <td>{{ friend.flavor }}</td>
-        <td>{{ friend.read }}</td>
+        <td>{{ friend.tname }}</td>
+        <td>{{ friend.aname }}</td>
+        <td>{{ friend.pname }}</td>
+        <td>{{ friend.classification }}</td>
         <td>{{ friend.activities }}</td>
+        <td>{{ friend.acquisition }}</td>
       </tr>
       {% endfor %}
     </tbody>

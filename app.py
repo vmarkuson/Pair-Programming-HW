@@ -21,23 +21,29 @@ def add():
 
         form = request.form
 
-        fname = form["fname"]
-        flavor = form["flavor"]
-        read = form["read"]
+        tname = form["tname"]
+        aname = form["aname"]
+        pname = form["pname"]
+        classification = form["read"]
         activities = form.getlist("activities")  # this is a PYthon list
+        acquisition = form["Acquisition"]
 
-        print(fname)
-        print(flavor)
-        print(read)
+        print(tname)
+        print(aname)
+        print(pname)
+        print(classification)
         print(activities)
+        print(acquisition)
 
         activities_string = ", ".join(activities)  # make the Python list into a string
 
         friend_dict = {
-            "name": fname,
-            "flavor": flavor,
-            "read": read,
+            "tname": tname,
+            "aname": aname,
+            "pname": pname,
+            "classification": classification,
             "activities": activities_string,
+            "acquisition": acquisition,
         }
 
         print(friend_dict)
