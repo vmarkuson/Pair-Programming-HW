@@ -1,0 +1,135 @@
+{% extends 'base.html' %} {% block body %}
+<h2>Digital Product Management - Web Form Template</h2>
+<hr />
+<main>
+  <form action="/add" method="POST">
+    <p>
+      <label for="Title-name">Title </label>
+      <input type="text" id="Title-name" name="tname" />
+    </p>
+    <p>
+      <label for="Author-name">Author </label>
+      <input type="text" id="Author-name" name="aname" />
+    </p>
+    <p>
+      <label for="Page-name">Pages </label>
+      <input type="text" id="Page-name" name="pname" />
+    </p>
+
+    <p>
+      <label>Classification</label>
+      <label for="read-Fiction">
+        <input
+          type="radio"
+          id="read-Fiction"
+          name="read"
+          value="Fiction"
+          required="required"
+        />
+        Fiction
+      </label>
+
+      <label for="read-Non-Fiction">
+        <input
+          type="radio"
+          id="read-Non-Fiction"
+          name="read"
+          value="Non-Fiction"
+          required="required"
+        />
+        Non-Fiction
+      </label>
+    </p>
+
+    <fieldset>
+      <legend>Details:</legend>
+      <label for="own-book">
+        <input
+          type="checkbox"
+          id="own-book"
+          name="activities"
+          value="ownbook"
+        />
+        I own this book.
+      </label>
+
+      <label for="read-book">
+        <input
+          type="checkbox"
+          id="read-book"
+          name="activities"
+          value="readbook"
+        />
+        I've read this book.
+      </label>
+
+      <label for="like-book">
+        <input
+          type="checkbox"
+          id="like-book"
+          name="activities"
+          value="likebook"
+        />
+        I liked this book.
+      </label>
+
+      <label for="recommend-book">
+        <input
+          type="checkbox"
+          id="recommend-book"
+          name="activities"
+          value="recommendbook"
+        />
+        I would recommend this book to others.
+      </label>
+    </fieldset>
+
+    <p>
+      <label for="Acquisition">
+        How did I get this book?
+        <select name="Acquisition" id="book" required>
+          <option value="" selected>Choose one ...</option>
+          <option value="purchased">I purchased it.</option>
+          <option value="gift">It was a gift.</option>
+          <option value="library">I checked it out from the library.</option>
+          <option value="loaned">A friend loaned it to me.</option>
+
+        </select>
+      </label>
+    </p>
+
+    <p><input type="submit" id="submit" value="Submit" /></p>
+  </form>
+
+  <br /><br />
+  {% if friends %}
+  <h3>Friend List</h3>
+  <hr />
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Classification</th>
+        <th>Details</th>
+        <th>Accquisition</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for friend in friends %}
+      <tr>
+        <td>{{ friend.tname }}</td>
+        <td>{{ friend.aname }}</td>
+        <td>{{ friend.pname }}</td>
+        <td>{{ friend.classification }}</td>
+        <td>{{ friend.activities }}</td>
+        <td>{{ friend.acquisition }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</main>
+{% endblock %}
