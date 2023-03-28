@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'vmarkuson-HW9'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C08836E13B2343E68DA2D0245BC763A5 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2916DD0ECD5B4CE39E2F127527DDBBFB }}
